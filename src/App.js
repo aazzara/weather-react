@@ -25,7 +25,13 @@ function App() {
             </div>
           </div>
           <br />
-          <Forecast />
+          <div className="row forecast">
+          <span className="forecast"><Forecast /></span>
+          <span className="forecast"><Forecast /></span>
+          <span className="forecast"><Forecast /></span>
+          <span className="forecast"><Forecast /></span>
+          <span className="forecast"><Forecast /></span>
+          </div>
         </div>
         <Footer />
       </div>
