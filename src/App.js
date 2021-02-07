@@ -25,12 +25,12 @@ function App() {
             </div>
           </div>
           <br />
-          <div className="row forecast">
-          <span className="forecast"><Forecast /></span>
-          <span className="forecast"><Forecast /></span>
-          <span className="forecast"><Forecast /></span>
-          <span className="forecast"><Forecast /></span>
-          <span className="forecast"><Forecast /></span>
+          <div className="row">
+          <div className="col forecast"><Forecast /></div>
+          <div className="col forecast"><Forecast /></div>
+          <div className="col forecast"><Forecast /></div>
+          <div className="col forecast"><Forecast /></div>
+          <div className="col forecast"><Forecast /></div>
           </div>
         </div>
         <Footer />

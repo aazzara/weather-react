@@ -2,7 +2,7 @@ import React from "react";
 import "./Forecast.css";
 
 export default function Forecast() {
-  return <div className="row future" id="forecast">
+  return <div className="Forecast">
     <div class="col range">
       <span class="time-range">Sun 16:00</span>
       <br/>

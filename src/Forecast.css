@@ -1,4 +1,17 @@
-.future {
-  padding-left: 5px;
-  padding-right: 5px;
+.range {
+  border: solid 1px black;
+  max-width: 100px;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
+  display: block;
+
+  background: linear-gradient(
+    rgba(167, 207, 240, 0.4),
+    rgba(92, 168, 240, 0.4)
+  );
+}
+.forecastIcon {
+  width: 50px;
+  height: 50px;
 }
