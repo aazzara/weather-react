@@ -5,7 +5,7 @@ import "./SearchBar.css";
 export default function SearchBar() {
   
 let [city, setCity] = useState("");
-let [message, setmessage] = useState("");
+//let [message, setmessage] = useState("");
 function updateCity(event) {
   setCity(event.target.value);
   }
@@ -17,8 +17,7 @@ function handleClick(event) {
   axios.get(url).then(getData);
   }
 function getData(response) {
-  
-  alert(response.data.main.temp)
+  alert (`The current temperature in ${response.data.name} is ${Math.round(response.data.main.temp)}ºC.`)
 }
   return (
     <div className="search-bar">
