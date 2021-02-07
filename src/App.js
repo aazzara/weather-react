@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
-import Weather from "./Weather"
+import SearchBar from "./SearchBar";
+import City from "./City";
+import RightNow from "./RightNow";
+import OtherStats from "./OtherStats";
+import Forecast from "./Forecast";
+import Footer from "./Footer";
+//import Weather from "./Weather"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Got it now... Learn React
-        </a>
-        <Weather city="New York"/>
-      </header>
+      <div className="container">
+        <div className="content">
+          <SearchBar />
+          <br />
+          <div className="row">
+            <div className="col">
+              <City />
+            </div>
+            <div className="col temp">
+              <RightNow />
+              <OtherStats />
+            </div>
+          </div>
+          <br />
+          <Forecast />
+        </div>
+        <Footer />
+      </div>
     </div>
   );
 }

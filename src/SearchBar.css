@@ -1,0 +1,10 @@
+.search-bar {
+  padding-left: 10px;
+}
+.search-bar .btn {
+  margin-left: 14px;
+}
+#changeCity {
+  vertical-align: middle;
+  height: 38px;
+}
