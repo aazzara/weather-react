@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 import "./SearchBar.css";
 
 export default function SearchBar() {
