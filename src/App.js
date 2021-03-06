@@ -6,7 +6,6 @@ import RightNow from "./RightNow";
 import OtherStats from "./OtherStats";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
-//import Weather from "./Weather"
 
 function App(props) {
 let [ready, setReady] = useState(false);
@@ -22,7 +21,7 @@ setWeatherData({
   wind: response.data.wind.speed,
   description: response.data.weather[0].description,
   date: new Date(response.data.dt*1000),
-  icon: ""
+  icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
 } )
 }
 
@@ -36,7 +35,7 @@ setCity(event.target.value);
 }
 
 function search(){
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e57aed5a3752290f9e3c0dd1d0ad914d&units=Metric
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e57aed5a3752290f9e3c0dd1d0ad914d&units=Imperial
 `;
   axios.get(url).then(getData);
 }
@@ -69,7 +68,7 @@ if (ready){
             <div className="col">
               <div className="city">
                 <h1 className="location">{weatherData.city}</h1>
-                <h5 className="current-time"><FormatDate date={weatherData.date}/></h5>
+                <h5 className="current-time"></h5>
               </div>
             </div>
           <div className="col temp">
@@ -91,7 +90,7 @@ if (ready){
     </div>
   );
 } else {
-  search();
+  search(props.defaultCity);
   }
 return ("Loading...")
 }

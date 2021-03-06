@@ -1,22 +1,17 @@
 import React from "react";
+import TempConv from "./TempConv";
 import "./RightNow.css";
 
 export default function RightNow(props) {
+  let fahrenheitTemp = props.data.temperature;
   return (
     <span className="rightNow">
       <h6>
         Right Now, <span className="condition text-capitalize"> {props.data.description}</span>{" "}
       </h6>
       <h1>
-        <img className="icon" src="" />
-        <span className="current-temp"></span>
-        <a href="#" className="active fahrenheit">
-          {" "}
-          {Math.round(props.data.temperature)} ºF{" "}
-        </a>
-        <a href="#">
-          <small className="inactive celsius">ºC</small>
-        </a>
+        <img className="icon" src={props.data.icon} />
+        <TempConv fahrenheit={fahrenheitTemp}/>
       </h1>
     </span>
   );
