@@ -16,6 +16,7 @@ function getData(response){
 setReady(true);
 setWeatherData({
   temperature: response.data.main.temp,
+  highTemp: response.data.main.temp_max,
   city: response.data.name,
   humidity: response.data.main.humidity,
   wind: response.data.wind.speed,
