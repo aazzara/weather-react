@@ -39,3 +39,12 @@ h6 {
   vertical-align: middle;
   height: 38px;
 }
+.city h1 {
+  margin: 0 auto;
+}
+.city {
+  text-align: center;
+  position: relative;
+  top: 20px;
+  text-transform: capitalize;
+}

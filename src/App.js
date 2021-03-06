@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import './App.css';
-import City from "./City";
+import FormatDate from "./FormatDate";
 import RightNow from "./RightNow";
 import OtherStats from "./OtherStats";
 import Forecast from "./Forecast";
@@ -21,7 +21,7 @@ setWeatherData({
   humidity: response.data.main.humidity,
   wind: response.data.wind.speed,
   description: response.data.weather[0].description,
-  date: "Wednesday 11pm",
+  date: new Date(response.data.dt*1000),
   icon: ""
 } )
 }
@@ -67,12 +67,15 @@ if (ready){
           <br />
           <div className="row">
             <div className="col">
-              <City data={weatherData}/>
+              <div className="city">
+                <h1 className="location">{weatherData.city}</h1>
+                <h5 className="current-time"><FormatDate date={weatherData.date}/></h5>
+              </div>
             </div>
-            <div className="col temp">
+          <div className="col temp">
               <RightNow data={weatherData}/>
               <OtherStats data={weatherData}/>
-            </div>
+          </div>
           </div>
           <br />
           <div className="row">
