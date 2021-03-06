@@ -1,12 +1,12 @@
 import React from "react";
 import "./City.css";
 
-export default function City() {
+export default function City(props) {
   return (
     <div className="city">
-      <h1 className="location">Fake city</h1>
+      <h1 className="location">{props.data.city}</h1>
 
-      <h5 className="current-time">11:00pm</h5>
+      <h5 className="current-time">{props.data.date}</h5>
     </div>
   );
 }
