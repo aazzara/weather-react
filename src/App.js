@@ -87,7 +87,7 @@ if (ready){
     </div>
   );
 } else {
-  search(props.defaultCity);
+  search();
   }
 return ("Loading...")
 }
