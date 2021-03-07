@@ -9,20 +9,33 @@ export default function Forecast(props) {
     setForecast(response.data);
     setLoaded(true);
   }
-  
+  console.log(forecast);
   let url = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=e57aed5a3752290f9e3c0dd1d0ad914d&units=Imperial`;
   axios.get(url).then(showForecast);
   
   if (loaded){
+    let iconUrl = `http://openweathermap.org/img/wn/${forecast.list[0].weather.icon}@2x.png`
   return <div className="Forecast">
     <div class="col range">
       <span class="time-range">Sun 16:00</span>
       <br/>
-      <img class="forecastIcon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" /> 
+      <img class="forecastIcon" src={iconUrl} alt="icon" /> 
       <br />
-      <span class="tempOne">{forecast.list[0].main.temp}</span>ºF
+      <span class="tempOne">{Math.round(forecast.list[0].main.temp)}</span>ºF
     </div>
+    <div class="col range">
+        Day 2 Forecast
+      </div>
+      <div class="col range">
+        Day 3 Forecast
+      </div>
+      <div class="col range">
+        Day 4 Forecast
+      </div>
+      <div class="col range">
+        Day 5 Forecast
+      </div>
   </div>
   } else {
-    return "Hello";
+    return `Loading...`;
   } }

@@ -69,7 +69,7 @@ if (ready){
             <div className="col">
               <div className="city">
                 <h1 className="location">{weatherData.city}</h1>
-                <h5 className="current-time"></h5>
+                <h5 className="current-time"><FormatDate data={weatherData.date}/></h5>
               </div>
             </div>
           <div className="col temp">
@@ -80,10 +80,6 @@ if (ready){
           <br />
           <div className="row">
           <div className="col forecast"><Forecast city={weatherData.city}/></div>
-          <div className="col forecast"><Forecast /></div>
-          <div className="col forecast"><Forecast /></div>
-          <div className="col forecast"><Forecast /></div>
-          <div className="col forecast"><Forecast /></div>
           </div>
         </div>
         <Footer />
