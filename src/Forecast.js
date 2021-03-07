@@ -11,8 +11,8 @@ export default function Forecast(props) {
   }
 
   if (loaded){
-    let iconUrl = `http://openweathermap.org/img/wn/${forecast.list[0].weather.icon}@2x.png`
-  return (<div className="Forecast">
+    let iconUrl = `http://openweathermap.org/img/wn/${forecast.list[0].weather[0].icon}@2x.png`;
+  return (<div className="row Forecast">
     <div class="col range">
       <span class="time-range">Sun 16:00</span>
       <br/>
@@ -34,7 +34,6 @@ export default function Forecast(props) {
       </div>
   </div>);
   } else {
-    //console.log(forecast);
     let url = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=e57aed5a3752290f9e3c0dd1d0ad914d&units=Imperial`;
     axios.get(url).then(showForecast);
     return `Loading...`;
