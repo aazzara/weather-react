@@ -13,7 +13,6 @@ let [city, setCity] = useState(props.defaultCity);
 let [weatherData, setWeatherData] = useState({});
 
 function getData(response){
-setReady(true);
 setWeatherData({
   temperature: response.data.main.temp,
   highTemp: response.data.main.temp_max,
@@ -23,7 +22,8 @@ setWeatherData({
   description: response.data.weather[0].description,
   date: new Date(response.data.dt*1000),
   icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-} )
+} );
+setReady(true);
 }
 
 function handleSubmit(event){
