@@ -78,7 +78,7 @@ if (ready){
           </div>
           </div>
           <br />
-          <div className="forecast"><Forecast city={city}/></div>
+          <div className="forecast"><Forecast city={weatherData.city}/></div>
         </div>
         <Footer />
       </div>
